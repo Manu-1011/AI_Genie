@@ -1,0 +1,106 @@
+/* styles.css */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background: #f4f7f9;
+    color: #333;
+}
+
+.container {
+    display: grid; /* Use grid for more flexible layout */
+    grid-template-columns: 20% 60% 20%; /* Adjust column widths */
+    grid-template-rows: auto 1fr; /* Allow content to grow in the middle */
+    width: 100%;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.upload-section {
+    grid-column: 1 / 2; /* Left column */
+    grid-row: 1 / 2; /* Top row */
+}
+
+.analysis-section {
+    grid-column: 2 / 3; /* Center column */
+    grid-row: 1 / 3; /* Span both rows */
+}
+
+.question-section {
+    grid-column: 3 / 4; /* Right column */
+    grid-row: 1 / 2; /* Top row */
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    color: #4a90e2;
+    margin-bottom: 1.5rem;
+}
+
+input[type="file"], input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button.upload-button, button.question-button {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.upload-button:hover, button.question-button:hover {
+    background-color: #357abd;
+}
+
+#response-container {
+    margin-top: 1.5rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#response-container img {
+    max-width: 100%;
+    margin-top: 1rem;
+}
+
+#upload-status {
+    margin-top: 1rem;
+    color: #27ae60;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-row-gap: 2rem;
+    }
+
+    .upload-section, .analysis-section, .question-section {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+}

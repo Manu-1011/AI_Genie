@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChartGenius - Upload & Analyze</title>
+    <link rel="stylesheet" href="{% static 'chart_genius/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="upload-section">
+            <div class="card">
+                <h2>Upload CSV/Excel</h2>
+                <form id="upload-form" action="{% url 'chart_genius:upload_dataset' %}" method="post" enctype="multipart/form-data" data-url="{% url 'chart_genius:upload_dataset' %}">
+                    {% csrf_token %}
+                    <input type="file" name="file" id="file-input" required>
+                    <button type="submit">Upload</button>
+                </form>
+                <p id="upload-status"></p>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <div class="card">
+                <h2>Analysis Output</h2>
+                <div id="response-container">
+                    <p>Chart or text response will appear here...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <div class="card">
+                <h2>Ask a Question</h2>
+                <form id="question-form">
+                    {% csrf_token %}
+                    <input type="text" name="question" id="question-input" placeholder="Ask a question..." required>
+                    <button type="submit" class="question-button">Get Answer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'chart_genius/js/main.js' %}"></script>
+</body>
+</html>

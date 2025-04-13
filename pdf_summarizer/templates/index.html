@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Summarizer</title>
+    <link rel="stylesheet" href="{% static 'pdf_summarizer/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Summarizer</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="pdfFile" name="file" accept="application/pdf" required>
+            <button type="submit">Upload PDF</button>
+        </form>
+
+        <div id="summary" class="summary"></div>
+        <div id="qa-section" style="display: none;">
+            <h2>Ask Questions</h2>
+            <input type="text" id="questionInput" placeholder="Type your question..." />
+            <button id="askQuestionBtn">Ask</button>
+            <div id="answers"></div>
+        </div>
+    </div>
+    <script src="{% static 'pdf_summarizer/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Genie</title>
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to AI Genie</h1>
+        <p>Your AI-powered assistant for various tasks.</p>
+        
+        <div class="features">
+            <a href="{% url 'pdf_summarizer:index' %}" class="feature-card">📄 PDF Summarizer</a>
+            <a href="{% url 'chart_genius:upload_analyze' %}" class="feature-card">📊 ChartGenius</a>
+        </div>
+    </div>
+</body>
+</html>
