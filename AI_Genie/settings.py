@@ -129,6 +129,9 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 
+<<<<<<< HEAD
+=======
+GOOGLE_API_KEY = 'plz user gemini api and accordingly upadate the model which u want to use in views of apps'
 
 # chatgpt add-ons
 MEDIA_URL = '/media/'
