@@ -1,0 +1,1 @@
+web: gunicorn AI_Genie.wsgi --bind 0.0.0.0:$PORT
