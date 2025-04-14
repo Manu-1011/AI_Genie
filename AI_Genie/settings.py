@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-eg2y$fp(jb2j2q&mb-8bqyy7xh@1(#3e+p72be4i^o#u$-)l4m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://ai-genie.onrender.com']
+ALLOWED_HOSTS = ['ai-genie.onrender.com']
 
 
 # Application definition
@@ -139,3 +139,7 @@ APPEND_SLASH = False
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # for development
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
