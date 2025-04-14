@@ -127,8 +127,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 
-GOOGLE_API_KEY = 'AIzaSyBLE5wM26zNqvd_8e3esZ65JTicpFZr_Tk'
 
 # chatgpt add-ons
 MEDIA_URL = '/media/'
